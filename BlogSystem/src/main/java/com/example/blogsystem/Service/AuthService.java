@@ -16,8 +16,6 @@ public class AuthService {
         user.setPassword(hash);
         user.setRole("USER");
         authRepository.save(user);
-
-
     }
 
 }

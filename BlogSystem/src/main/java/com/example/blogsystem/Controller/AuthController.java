@@ -5,10 +5,7 @@ import com.example.blogsystem.Service.AuthService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -21,6 +18,12 @@ public class AuthController {
         authService.register(user);
         return ResponseEntity.status(200).body("User Rigsterd");
 
+    }
+
+    @GetMapping("/logout")
+    public ResponseEntity logout(){
+
+        return ResponseEntity.status(200).body("loged out");
     }
 
 }
